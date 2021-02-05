@@ -20,6 +20,7 @@ This framework also allows to generate detailed plots to visualize the internal 
 ### Paper
 
 * The relevant paper to cite for follow-up or related work on Cacheus is:
+
 ``@inproceedings {cacheus-fast21,
 author = {Liana V. Rodriguez and Farzana Yusuf and Steven Lyons and Eysler Paz and Raju Rangaswami and Jason Liu and Ming Zhao and Giri Narasimhan},
 title = {Learning Cache Replacement with {CACHEUS}},
@@ -32,6 +33,7 @@ month = February,
 
 
 * The relevant paper to cite for follow-up or related work on LeCaR is:
+
 ``@inproceedings {lecar-hotstorage19,
 author = {Giuseppe Vietri and Liana V. Rodriguez and Wendy A. Martinez and Steven Lyons and Jason Liu and Raju Rangaswami and Ming Zhao and Giri Narasimhan},
 title = {Driving Cache Replacement with ML-based LeCaR},
@@ -42,4 +44,8 @@ url = {https://www.usenix.org/conference/hotstorage18/presentation/vietri},
 publisher = {{USENIX} Association},
 month = jul,
 }``
+
+### Acknowledgments
+
+Song Jiang shared the original code for LIRS that we adapted to Python and used for comparative evaluation.
 
