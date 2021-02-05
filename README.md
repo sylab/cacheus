@@ -1,6 +1,6 @@
 ## This repository contains the code used in the Cacheus Project
 
-All caching algorithm implementations go in code/algs folder. This folder contains multiple algorithm implementations developed by our team using original code provided on several publications. Examples of such policies are LIRS, ARC and DLIRS which cover important part of the state-of-the-art for buffer cache management.
+All caching algorithm implementations are located in the code/algs folder. This folder contains multiple algorithm implementations using original code provided on several publications. Examples of such policies are LIRS, ARC and DLIRS which an cover important state-of-the-art algorithms for cache management.
 
 In addition, this repo includes the parsing code to run cache simulation with several workloads available on the [SNIA Website](http://iotta.snia.org/tracetypes/3) such as FIU, MSR, Nexus 5 Smartphone, CloudCache and CloudVPS.
 
@@ -15,7 +15,7 @@ The next step is executing the following command in the console:
 
 ```python run.py example.config```
 
-This framework also allows to generate detailed plots to visualize the internal state of the algorithms as well as hit-rate over time and workload's access patterns.
+This framework also allows generating detailed plots to visualize the internal state of the algorithms as well as hit-rate over time and workload's access patterns.
 
 ### Paper
 
@@ -42,7 +42,7 @@ year = {2018},
 address = {Boston, MA},
 url = {https://www.usenix.org/conference/hotstorage18/presentation/vietri},
 publisher = {{USENIX} Association},
-month = jul,
+month = July,
 }``
 
 ### Acknowledgments
