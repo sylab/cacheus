@@ -276,8 +276,8 @@ class Cacheus:
             evicted = self.getLRU(policy_history)
             del policy_history[evicted.oblock]
 	    #adding this part here ######
-            #if policy_history == self.lru_hist and evicted.is_new:
-            #	self.nor_count -= 1
+            if policy_history == self.lru_hist and evicted.is_new:
+            	self.nor_count -= 1
         policy_history[x.oblock] = x
 
     # Get the LRU item in the given DequeDict
@@ -320,6 +320,10 @@ class Cacheus:
                 del self.q[evicted.oblock]
                 self.q_size -= 1
 
+        if evicted.is_demoted:
+            self.dem_count -= 1
+            evicted.is_demoted = False
+		
         if policy == -1:
             del self.q[evicted.oblock]
             self.q_size -= 1
