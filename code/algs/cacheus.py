@@ -343,7 +343,7 @@ class Cacheus:
         elif self.W[1] >= 0.99:
             self.W = np.array([0.01, 0.99], dtype=np.float32)
 
-    def adjustSize(self, hit_in_Q):        
+    def adjustSize(self, hit_in_Q):
         if hit_in_Q:
             dem_count = max(1, self.dem_count)
             self.s_limit = min(
