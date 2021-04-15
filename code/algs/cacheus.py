@@ -344,17 +344,17 @@ class Cacheus:
             self.W = np.array([0.01, 0.99], dtype=np.float32)
 
     def adjustSize(self, hit_in_Q):
-        self.dem_count = 1 if self.dem_count == 0 else self.dem_count
-        self.nor_count = 1 if self.nor_count == 0 else self.nor_count
         if hit_in_Q:
+            dem_count = max(1, self.dem_count)
             self.s_limit = min(
                 self.cache_size - 1, self.s_limit +
-                max(1, int((self.nor_count / self.dem_count) + 0.5)))
+                max(1, int((self.nor_count / dem_count) + 0.5)))
             self.q_limit = self.cache_size - self.s_limit
         else:
+            nor_count = max(1, self.nor_count)
             self.q_limit = min(
                 self.cache_size - 1, self.q_limit +
-                max(1, int((self.dem_count / self.nor_count) + 0.5)))
+                max(1, int((self.dem_count / nor_count) + 0.5)))
             self.s_limit = self.cache_size - self.q_limit
 
     def hitinLRUHist(self, oblock):
