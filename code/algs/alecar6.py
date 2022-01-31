@@ -306,7 +306,7 @@ class ALeCaR6:
         return evicted
 
     # Process and access request for the given oblock
-    def request(self, oblock):
+    def request(self, oblock, ts):
         miss = True
         evicted = None
         op = CacheOp.INSERT
@@ -328,7 +328,7 @@ class ALeCaR6:
             evicted = self.miss(oblock)
 
         # Windowed
-        self.visual.addWindow({'hit-rate': 0 if miss else 1}, self.time)
+        self.visual.addWindow({'hit-rate': 0 if miss else 1}, self.time, ts)
 
         # Learning Rate
         if not miss:
