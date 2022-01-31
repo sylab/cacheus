@@ -53,7 +53,7 @@ class MRU:
 
         return evicted
 
-    def request(self, oblock):
+    def request(self, oblock, ts):
         miss = True
         evicted = None
 
@@ -65,7 +65,7 @@ class MRU:
         else:
             evicted = self.miss(oblock)
 
-        self.visual.addWindow({'hit-rate': 0 if miss else 1}, self.time)
+        self.visual.addWindow({'hit-rate': 0 if miss else 1}, self.time, ts)
 
         if miss:
             self.pollution.incrementUniqueCount()
