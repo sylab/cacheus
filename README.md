@@ -1,23 +1,33 @@
 ## This repository contains the code used in the Cacheus Project
 
-All caching algorithm implementations are located in the code/algs folder. This folder contains multiple algorithm implementations using original code provided on several publications. Examples of such policies are LIRS, ARC and DLIRS which an cover important state-of-the-art algorithms for cache management.
+All caching algorithm implementations are located in the code/algs folder. These implementation were done using original code shared by the authors when possible or provided the correspoding publication. Examples of such policies are LIRS, ARC and DLIRS which cover state-of-the-art algorithms for caching.
 
-In addition, this repo includes the parsing code to run cache simulation with several workloads available on the [SNIA Website](http://iotta.snia.org/tracetypes/3) such as FIU, MSR, Nexus 5 Smartphone, CloudCache and CloudVPS.
-
-### Cacheus
+### What is Cacheus?
 
 Cacheus is a novel cache replacement algorithms designed for paging domain. This strategy is an evolution of the ML-based algorithm LeCaR which achieves good performance when cache sizes are small relative to the working set.
 
-### Running
+### How to run experiments?
 
 To run experiments, the configuration file can be modified appropriately with the specific parameters such as input file location, cache size, algorithm and dataset name.
 The next step is executing the following command in the console:
 
-```python run.py example.config```
+```python3 run.py example.config```
 
-This framework also allows generating detailed plots to visualize the internal state of the algorithms as well as hit-rate over time and workload's access patterns.
+This framework also allows you to generate detailed graphs to visualize the internal state of the algorithms, as well as the hit rate over time and the access patterns of the workload using this command:
 
-### Paper
+```python3 visual.py visual.config```
+
+### Where to find the traces?
+
+Summary of the workloads used in the paper:
+
+1. [FIU SRC_Map](http://iotta.snia.org/traces/block-io/414) (All traces are a one-day duration).
+2. [MSR Cambridge](http://iotta.snia.org/traces/block-io/388) (These traces are a one-week duration per file. For the paper, we extracted the first day only based on the timestamp).
+3. [CloudVPS](http://visa.lab.asu.edu/web/resources/traces/traces-cloudvps/) (All traces are a one-day duration).
+4. CloudCache is a collection of the [webserver](http://visa.lab.asu.edu/web/resources/traces/traces-webserver/) and [moodle](http://visa.lab.asu.edu/web/resources/traces/traces-moodle/) traces that were used in the [Cloudcache](https://www.usenix.org/conference/fast16/technical-sessions/presentation/arteaga) paper from FAST'16. (All one-day duration).
+5. CloudPhysics are non-public traces used in the [SHARDS](https://www.usenix.org/conference/fast15/technical-sessions/presentation/waldspurger) paper from FAST'15 that were shared directly from the authors. 
+
+### References
 
 * The relevant paper to cite for follow-up or related work on Cacheus is:
 
