@@ -144,7 +144,7 @@ class ALeCaR6:
     #         a way that cannot be taken back, such as setting the weights(W)
     #         Please note that cache_size is a required argument and not
     #         optional like all the kwargs are
-    def __init__(self, cache_size, **kwargs):
+    def __init__(self, cache_size, window_size, **kwargs):
         # Randomness and Time
         np.random.seed(123)
         self.time = 0
